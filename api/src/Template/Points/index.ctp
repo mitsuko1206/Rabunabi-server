@@ -1,6 +1,6 @@
 <?php
 /* @var \App\View\AppView $this */
-$this->assign("title", __("設定"));
+$this->assign("title", __("ポイント"));
 echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
 ?>
 <style>
@@ -21,10 +21,22 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>設定</h2>
+                        <h2>ポイント</h2>
                         <div class="clearfix"></div>
                     </div>
-                    
+                    <?php $this->From->create($settings);?>
+                    <div class="x_content">
+                        <br>
+                        <?php foreach($points as $point): ?>
+                            <div>
+                                <?php if($point['Points']['id'] == 1) { ?>
+                                <h1>Male</h1>
+                                <?php } else { ?>
+                                <h1>Female</h1>
+                                <?php } ?>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>
