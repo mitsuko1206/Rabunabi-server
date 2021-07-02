@@ -77,7 +77,7 @@
                                 <a href="<?= $this->Url->build(["controller" => "Settings", "action" => "index"]) ?>"><i class="fa fa-gears"></i> 設定</a>
                             </li>
                             <li>
-                                <a href="<?= $this->Url->build(["controller" => "Settings", "action" => "index"]) ?>"><i class="fa fa-gears"></i> ポイント</a>
+                                <a href="<?= $this->Url->build(["controller" => "Points", "action" => "index"]) ?>"><i class="fa fa-gears"></i> ポイント</a>
                             </li>
                             
                         </ul>
