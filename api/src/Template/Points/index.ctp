@@ -30,7 +30,7 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
 
                         <div>
                                 
-                               
+                               <?php echo $pointsArr ?>
                             
                                 
                         </div>
