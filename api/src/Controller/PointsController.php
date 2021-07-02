@@ -5,6 +5,7 @@ namespace App\Controller;
  * Points Controller
  *
  * @property \App\Model\Table\PointsTable $Points
+ * @property \App\Model\Table\SettingsTable $Settings
  *
  * @method \App\Model\Entity\Points[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
