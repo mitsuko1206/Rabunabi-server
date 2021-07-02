@@ -24,7 +24,7 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                         <h2>ポイント</h2>
                         <div class="clearfix"></div>
                     </div>
-                    <?= $this->From->create($settings); ?>
+                    
                     <div class="x_content">
                         <br>
                        
