@@ -20,7 +20,7 @@ class PointsController extends AppController
 
     public function index()
     {
-        $pointsArr = $this->Points->find('all');
+        //$pointsArr = ;
       
         //$this->set(compact("points"));
         // $points = [
@@ -33,6 +33,6 @@ class PointsController extends AppController
         //     // 'readMessageFemale' => $pointsArr[1]['Points']['readMessage'],
         //     // 'sendImageFemale' => $pointsArr[1]['Points']['sendImage'],
         // ];
-        $this->set('pointsArr', $pointsArr);
+        $this->set('pointsArr', $this->Points->find('all'));
     }
 }
