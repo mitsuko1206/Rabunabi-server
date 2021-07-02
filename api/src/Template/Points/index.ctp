@@ -30,7 +30,7 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
 
                         <div>
                                 
-                               <p><?php echo $pointsArr ?></p>
+                               <p><?php echo $pointsArr[0] ?></p>
                             
                                <p>男性</p>
                             <br>
