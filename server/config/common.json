@@ -1,0 +1,18 @@
+{
+    "DB": {
+        "DRIVER": "mongodb",
+        "HOST": "localhost",
+        "USERNAME": "",
+        "PASSWORD": "",
+        "PORT": 27017,
+        "DBNAME": "rabunabi_chat_db"
+    },
+    "APP": {
+        "SALT_KEY": "PCM-GLC-2018",
+        "FCM_API_KEY": "AAAA7dRXr1s:APA91bHemvTWvICzrSp32UNGu5DTny3hK1VY_VdjDASdRrfnfD1vtwYzqouj7gqCwfgurNtT0UsKCYYjKmNfs66w5MfyH2z1kwiqHoE9bNgMc7UaCtr6g1elI-nNTOK78R8_CsytIelS"
+    },
+    "CONST": {
+        "MSG_TYPE_TEXT": 1,
+        "MSG_TYPE_IMAGE": 2
+    }
+}
