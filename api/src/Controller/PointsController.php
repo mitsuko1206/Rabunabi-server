@@ -38,9 +38,9 @@ class PointsController extends AppController
         //     $this->redirect(["action" => "index"]);
         // }
         // $this->set(compact("setting"));
-        //$points = $this->Points.find();
+        $points = $this->Points.find();
       
-        $this->set();
+        $this->set(compact("points"));
     }
 
     // public function getTimeline() {
