@@ -74,7 +74,7 @@
                                 <a href="<?= $this->Url->build(["controller" => "RandomConfigs", "action" => "index"]) ?>"><i class="fa fa-comment-o"></i> ランダムチャット送信</a>
                             </li>
                             <li>
-                                <a href="<?= $this->Url->build(["controller" => "Settings", "action" => ""]) ?>"><i class="fa fa-gears"></i> 設定</a>
+                                <a href="<?= $this->Url->build(["controller" => "Settings", "action" => "index"]) ?>"><i class="fa fa-gears"></i> 設定</a>
                             </li>
                             <li>
                                 <a href="<?= $this->Url->build(["controller" => "Points", "action" => "index"]) ?>"><i class="fa fa-gears"></i> ポイント</a>

@@ -1,6 +1,6 @@
 <?php
 /* @var \App\View\AppView $this */
-$this->assign("title", __("設定"));
+$this->assign("title", __("ポイント"));
 echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
 ?>
 <style>
@@ -21,10 +21,10 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>設定</h2>
+                        <h2>ポイント</h2>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="x_content">
+                    <!-- <div class="x_content">
                         <br>
                         <?= $this->Form->create($setting, ["id" => "frmSetting", "class" => "form-horizontal form-label-left"]); ?>
                             <div class="form-group">
@@ -130,7 +130,7 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                                 </div>
                             </div>
                         <?= $this->Form->end() ?>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
