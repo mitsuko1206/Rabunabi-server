@@ -38,10 +38,8 @@ class PointsController extends AppController
         //     $this->redirect(["action" => "index"]);
         // }
         // $this->set(compact("setting"));
-        $points = $this->Points.find('all');
-        $pointsMale = $this->Points->find()->where(["Points.id" => 1])->first();
-        $pointsFemale = $this->Points->find()->where(["Points.id" => 2])->first();
-
+        $points = $this->Points.find();
+      
         $this->set(compact("points"));
     }
 
