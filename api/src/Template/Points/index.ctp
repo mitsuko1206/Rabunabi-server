@@ -12,7 +12,7 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3><?= $this->fetch("title") ?></h3>
+                <h3><?=$this->fetch("title")?></h3>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -27,17 +27,53 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                     <?php $this->Form->create($points);?>
                     <div class="x_content">
                         <br>
-                        <?php foreach($points as $point): ?>
-                            <div>
-                                <h1><?php echo $point ?></h1>
-                                <?php if($point['id'] == 1) { ?>
-                                <h1>Male</h1>
-                                <?php } else { ?>
-                                <h1>Female</h1>
-                                <?php } ?>
+
+                        <div>
+                                
+                               
+                            <p>男性</p>
+                            <br>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                    初期ポイント
+                                </label>
+                                <div class="col-md-3 col-sm-3 col-xs-12">
+                                    <?=$this->Form->control("initialPointMale", ["label" => false, "class" => "form-control"])?>
+                                </div>
+
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                送る
+                                </label>
+                                <div class="col-md-3 col-sm-3 col-xs-12">
+                                    <?=$this->Form->control("sendMessageMale", ["label" => false, "class" => "form-control"])?>
+                                </div>
+                                
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                読む
+                                </label>
+                                <div class="col-md-3 col-sm-3 col-xs-12">
+                                    <?=$this->Form->control("readMessageMale", ["label" => false, "class" => "form-control"])?>
+                                </div>
+                                
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                画像を送る
+                                </label>
+                                <div class="col-md-3 col-sm-3 col-xs-12">
+                                    <?=$this->Form->control("sendImageMale", ["label" => false, "class" => "form-control"])?>
+                                </div>
                             </div>
-                        <?php endforeach; ?>
+
+
+                            <p>初期ポイント</p>
+                            
+                            
+                            <p>女性</p>
+                                
+                        </div>
+
                     </div>
+                    <?=$this->Form->end()?>
                 </div>
             </div>
         </div>
