@@ -29,7 +29,7 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                         <br>
                         <?php foreach($points as $point): ?>
                             <div>
-                                <h1><?php $points['Points']['id']?></h1>
+                                <h1><?php $points['Points']['id'] ?></h1>
                                 <?php if($point['Points']['id'] == 1) { ?>
                                 <h1>Male</h1>
                                 <?php } else { ?>
