@@ -20,7 +20,7 @@ class PointsController extends AppController
 
     public function index()
     {
-        $pointsArr = $this->Points->find();
+        $pointsArr = $this->Points->find('all');
       
         //$this->set(compact("points"));
         // $points = [
