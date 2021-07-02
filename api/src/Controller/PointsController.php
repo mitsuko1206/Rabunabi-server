@@ -24,7 +24,7 @@ class PointsController extends AppController
       
         $this->set(compact("points"));
         $points = [
-            'initialPointsMale' =>'sdf',
+            'initialPointsMale' => $pointsArr[0]['initialPoint'],
             // 'sendMessageMale' => $pointsArr[0]['Points']['sendMessage'],
             // 'readMessageMale' => $pointsArr[0]['Points']['readMessage'],
             // 'sendImageMale' => $pointsArr[0]['Points']['sendImage'],
