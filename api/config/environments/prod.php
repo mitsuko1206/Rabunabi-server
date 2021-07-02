@@ -1,41 +1,8 @@
 <?php
 return [
-    /**
-     * Debug Level:
-     *
-     * Production Mode:
-     * false: No error messages, errors, or warnings shown.
-     *
-     * Development Mode:
-     * true: Errors and warnings shown.
-     */
+   
     'debug' => filter_var(env('DEBUG', false), FILTER_VALIDATE_BOOLEAN),
 
-    /**
-     * Configure basic information about the application.
-     *
-     * - namespace - The namespace to find app classes under.
-     * - defaultLocale - The default locale for translation, formatting currencies and numbers, date and time.
-     * - encoding - The encoding used for HTML + database connections.
-     * - base - The base directory the app resides in. If false this
-     *   will be auto detected.
-     * - dir - Name of app directory.
-     * - webroot - The webroot directory.
-     * - wwwRoot - The file path to webroot.
-     * - baseUrl - To configure CakePHP to *not* use mod_rewrite and to
-     *   use CakePHP pretty URLs, remove these .htaccess
-     *   files:
-     *      /.htaccess
-     *      /webroot/.htaccess
-     *   And uncomment the baseUrl key below.
-     * - fullBaseUrl - A base URL to use for absolute links.
-     * - imageBaseUrl - Web path to the public images directory under webroot.
-     * - cssBaseUrl - Web path to the public css directory under webroot.
-     * - jsBaseUrl - Web path to the public js directory under webroot.
-     * - paths - Configure paths for non class based resources. Supports the
-     *   `plugins`, `templates`, `locales` subkeys, which allow the definition of
-     *   paths for plugins, view templates and locale files respectively.
-     */
     'App' => [
         'namespace' => 'App',
         'encoding' => env('APP_ENCODING', 'UTF-8'),
@@ -47,7 +14,7 @@ return [
         // 'baseUrl' => env('SCRIPT_NAME'),
         'subDomain' => 'rabunabi',
         'fullBaseUrl' => false,
-        'socketBaseUrl' => 'http://18.183.150.95:3000',
+        'socketBaseUrl' => 'http://18.183.150.95:3001/chat-rabunabi',
         'imageBaseUrl' => 'img/',
         'cssBaseUrl' => 'css/',
         'jsBaseUrl' => 'js/',
@@ -58,32 +25,17 @@ return [
         ],
     ],
 
-    /**
-     * Security and encryption configuration
-     *
-     * - salt - A random string used in security hashing methods.
-     *   The salt value is also used as the encryption key.
-     *   You should treat it as extremely sensitive data.
-     */
+   
     'Security' => [
         'salt' => env('SECURITY_SALT', '5a7a24eee102c2d83aa914059370db12371af545037751583c48e8a528102938'),
     ],
 
-    /**
-     * Apply timestamps with the last modified time to static assets (js, css, images).
-     * Will append a querystring parameter containing the time the file was modified.
-     * This is useful for busting browser caches.
-     *
-     * Set to true to apply timestamps when debug is true. Set to 'force' to always
-     * enable timestamping regardless of debug value.
-     */
+  
     'Asset' => [
         // 'timestamp' => true,
     ],
 
-    /**
-     * Configure the cache adapters.
-     */
+   
     'Cache' => [
         'default' => [
             'className' => 'File',

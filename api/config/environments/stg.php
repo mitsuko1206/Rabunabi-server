@@ -1,41 +1,8 @@
 <?php
 return [
-    /**
-     * Debug Level:
-     *
-     * Production Mode:
-     * false: No error messages, errors, or warnings shown.
-     *
-     * Development Mode:
-     * true: Errors and warnings shown.
-     */
+  
     'debug' => filter_var(env('DEBUG', false), FILTER_VALIDATE_BOOLEAN),
 
-    /**
-     * Configure basic information about the application.
-     *
-     * - namespace - The namespace to find app classes under.
-     * - defaultLocale - The default locale for translation, formatting currencies and numbers, date and time.
-     * - encoding - The encoding used for HTML + database connections.
-     * - base - The base directory the app resides in. If false this
-     *   will be auto detected.
-     * - dir - Name of app directory.
-     * - webroot - The webroot directory.
-     * - wwwRoot - The file path to webroot.
-     * - baseUrl - To configure CakePHP to *not* use mod_rewrite and to
-     *   use CakePHP pretty URLs, remove these .htaccess
-     *   files:
-     *      /.htaccess
-     *      /webroot/.htaccess
-     *   And uncomment the baseUrl key below.
-     * - fullBaseUrl - A base URL to use for absolute links.
-     * - imageBaseUrl - Web path to the public images directory under webroot.
-     * - cssBaseUrl - Web path to the public css directory under webroot.
-     * - jsBaseUrl - Web path to the public js directory under webroot.
-     * - paths - Configure paths for non class based resources. Supports the
-     *   `plugins`, `templates`, `locales` subkeys, which allow the definition of
-     *   paths for plugins, view templates and locale files respectively.
-     */
     'App' => [
         'namespace' => 'App',
         'encoding' => env('APP_ENCODING', 'UTF-8'),
@@ -45,9 +12,9 @@ return [
         'webroot' => 'webroot',
         'wwwRoot' => WWW_ROOT,
         // 'baseUrl' => env('SCRIPT_NAME'),
-        'subDomain' => 'linkup',
+        'subDomain' => 'rabunabi',
         'fullBaseUrl' => false,
-        'socketBaseUrl' => 'http://52.69.103.221:3000/chat-balloon',
+        'socketBaseUrl' => 'http://52.69.103.221:3001/chat-rabunabi',
         'imageBaseUrl' => 'img/',
         'cssBaseUrl' => 'css/',
         'jsBaseUrl' => 'js/',
