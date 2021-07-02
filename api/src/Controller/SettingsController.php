@@ -35,6 +35,6 @@ class SettingsController extends AppController
             }
             $this->redirect(["action" => "index"]);
         }
-        $this->set(compact("setting"));
+        $this->set();
     }
 }
