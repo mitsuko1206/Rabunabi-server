@@ -27,15 +27,7 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                     <?php $this->From->create($settings);?>
                     <div class="x_content">
                         <br>
-                        <?php foreach($points as $point): ?>
-                            <div>
-                                <?php if($point['Points']['id'] == 1) { ?>
-                                <h1>Male</h1>
-                                <?php } else { ?>
-                                <h1>Female</h1>
-                                <?php } ?>
-                            </div>
-                        <?php endforeach; ?>
+                       
                     </div>
                 </div>
             </div>
