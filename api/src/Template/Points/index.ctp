@@ -32,7 +32,10 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                                 
                                <p><?php echo $pointsArr ?></p>
                             
-                                
+                               <p>男性</p>
+                            <br>
+
+                           
                         </div>
 
                     </div>
