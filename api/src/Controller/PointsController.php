@@ -21,6 +21,7 @@ class PointsController extends AppController
     {
         
         $setting = $this->Settings->find()->where(["Settings.id" => 1])->first();
+        echo('shflse');
         if (!$setting) {
             $setting = $this->Settings->newEntity([
                 "id" => 1
