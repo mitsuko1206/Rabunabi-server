@@ -29,7 +29,18 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                         <br>
 
                         <div>
-                                <?php dd($pointsArr); ?>
+                                <?php 
+                                 $points = [
+                                    'initialPointsMale' => $pointsArr[0]['initialPoints'],
+                                    'sendMessageMale' => $pointsArr[0]['sendMessage'],
+                                    'readMessageMale' => $pointsArr[0]['readMessage'],
+                                    'sendImageMale' => $pointsArr[0]['sendImage'],
+                                    'initialPointsFemale' => $pointsArr[1]['initialPoints'],
+                                    'sendMessageFemale' => $pointsArr[1]['sendMessage'],
+                                    'readMessageFemale' => $pointsArr[1]['readMessage'],
+                                    'sendImageFemale' => $pointsArr[1]['sendImage'],
+                                ];
+                                dd($points); ?>
                                <p><?php echo $points ?></p>
                             
                                <p>男性</p>
