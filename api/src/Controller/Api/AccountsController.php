@@ -224,14 +224,14 @@ class AccountsController extends ApiAppController
             return $this->responseData(["error_code" => 101]);
         }
         $this->loadModel("Points");
-        $point = $this->Points->find();
+        $point = $this->Points->find()->select()->where(['Points.male' => $dataPost['gender'] == 1]);
         
         $account = $this->Accounts->newEntity($dataPost);
         $account->device_id = $device->id;
         $account->in_group = Account::STATUS_NORMAL;
         $account->status = Account::STATUS_NORMAL;
         $account->revision = 1;
-        //$account->point = $point['initialPoints'];
+        $account->point = $point['initialPoints'];
         if ($this->Accounts->save($account)) {
 	        if (isset($dataPost["avatar"])) {
 		        if (!isset($dataPost["avatar"]["size"])) {
