@@ -20,7 +20,7 @@ class PointsController extends AppController
 
     public function index()
     {
-        $point = $this->Points->find()->select(["Points.initialPoints"])->where(["Points.male" => true])->first();
+        $point = $this->Points->find()->select()->where(["Points.male" => true])->first();
         dd($point);
         if ($this->request->is(['POST', 'PUT'])) { 
 
