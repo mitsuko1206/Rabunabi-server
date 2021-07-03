@@ -222,7 +222,7 @@ class AccountsController extends ApiAppController
         ) {
             return $this->responseData(["error_code" => 101]);
         }
-        $point = $this->Points->find()->select()->where(['male' => $dataPost['gender'] == 1])->first();
+        //$point = $this->Points->find()->select()->where(['male' => $dataPost['gender'] == 1])->first();
         $account = $this->Accounts->newEntity($dataPost);
         $account->device_id = $device->id;
         $account->in_group = Account::STATUS_NORMAL;
