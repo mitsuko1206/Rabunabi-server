@@ -27,19 +27,19 @@ class PointsController extends AppController
             $pointsTable = TableRegistry::getTableLocator()->get('Points');
             $point = $pointsTable->get(1); // Return point with id 1
 
-            $article->initialPoints = $postData['initialPointsMale'];
-            $article->sendMessage = $postData['sendMessageMale'];
-            $article->readMessage = $postData['readMessageMale'];
-            $article->sendImage = $postData['sendImageMale'];
-            $pointsTable->save($article);
+            $point->initialPoints = $postData['initialPointsMale'];
+            $point->sendMessage = $postData['sendMessageMale'];
+            $point->readMessage = $postData['readMessageMale'];
+            $point->sendImage = $postData['sendImageMale'];
+            $pointsTable->save($point);
 
             $point = $pointsTable->get(2); // Return point with id 2
 
-            $article->initialPoints = $postData['initialPointsFemale'];
-            $article->sendMessage = $postData['sendMessageFemale'];
-            $article->readMessage = $postData['readMessageFemale'];
-            $article->sendImage = $postData['sendImageFemale'];
-            $pointsTable->save($article);
+            $point->initialPoints = $postData['initialPointsFemale'];
+            $point->sendMessage = $postData['sendMessageFemale'];
+            $point->readMessage = $postData['readMessageFemale'];
+            $point->sendImage = $postData['sendImageFemale'];
+            $pointsTable->save($point);
         }
         $pointsArr = $this->Points->find()->toArray();
         
