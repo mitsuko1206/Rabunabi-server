@@ -20,9 +20,10 @@ class PointsController extends AppController
     public function index()
     {
         $pointsArr = $this->Points->find()->toArray();
+        $points = [];
         //$pointsArr = mysqli_fetch_array($pointsArr);
         
        
-        $this->set(compact('pointsArr'));
+        $this->set(compact('pointsArr', 'points'));
     }
 }
