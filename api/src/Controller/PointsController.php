@@ -32,6 +32,6 @@ class PointsController extends AppController
             'readMessageFemale' => $pointsArr[1]['readMessage'],
             'sendImageFemale' => $pointsArr[1]['sendImage'],
         ];
-        $this->set('points');
+        $this->set(compact('points'));
     }
 }
