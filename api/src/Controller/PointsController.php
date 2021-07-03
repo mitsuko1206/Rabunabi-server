@@ -8,7 +8,7 @@ use Cake\ORM\TableRegistry;
 /**
  * Points Controller
  *
- * @property SettingsTable $Points
+ * @property PointsTable $Points
  */
 class PointsController extends AppController
 {
