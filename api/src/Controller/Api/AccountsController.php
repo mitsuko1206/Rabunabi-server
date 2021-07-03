@@ -269,6 +269,12 @@ class AccountsController extends ApiAppController
                     "purpose" => AppUtil::handleStringNull($account->purpose),
                 ],
             ];
+            $points = [
+                "points" => $point['initialPoints'],
+                "sendMessage" => $point['sendMessage'],
+                "readMessage" => $point['readMessage'],
+                "sendImage" => $point['sendImage']
+            ];
             $jwt_token = JWT::encode($payload, $this->_apiConfig["jwt_key"]);
 
             $this->syncAccountToMongo([
@@ -290,7 +296,7 @@ class AccountsController extends ApiAppController
                 "purpose" => AppUtil::handleStringNull($account->purpose),
             ]);
 
-            return $this->responseData(['status' => true, 'data' => ["Authorization" => $jwt_token, "payload" => $payload]]);
+            return $this->responseData(['status' => true, 'data' => ["Authorization" => $jwt_token, "payload" => $payload, "points" => $points]]);
         } else {
             return $this->responseData(["error_code" => 600]);
         }
