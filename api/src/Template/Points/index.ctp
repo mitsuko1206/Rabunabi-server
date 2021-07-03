@@ -81,10 +81,10 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                                     <?=$this->Form->control("sendImageMale", ["label" => false, "value" => $points['sendImageMale'], "type" => "number", "min" => "0", "step" => "1", "class" => "form-control"])?>
                                 </div>
                             </div>
-                           
+                            <div class="ln_solid"></div>
                             <div class="form-group">
-                                <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-12 col-sm-offset-12 col-xs-offset-12">
-                                    <button type="submit" class="btn btn-success">Save</button>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <button  style="margin-left: auto" type="submit" class="btn btn-success">Save</button>
                                 </div>
                             </div>
 
