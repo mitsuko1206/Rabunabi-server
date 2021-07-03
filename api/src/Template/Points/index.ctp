@@ -28,8 +28,6 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                     <div class="x_content">
                         <div>
                         <p>男性</p>
-                            <br>
-
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">
                                     初期ポイント
@@ -37,7 +35,7 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                                 <div class="col-md-3 col-sm-3 col-xs-12">
                                     <?=$this->Form->control("initialPointsMale", ["label" => false, "class" => "form-control"])?>
                                 </div>
-
+<br>
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">
                                 送る
                                 </label>
