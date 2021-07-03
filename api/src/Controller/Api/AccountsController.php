@@ -223,7 +223,7 @@ class AccountsController extends ApiAppController
         ) {
             return $this->responseData(["error_code" => 101]);
         }
-        $point = $this->Points->find();
+        $point = $this->Accounts->find();
         
         $account = $this->Accounts->newEntity($dataPost);
         $account->device_id = $device->id;
