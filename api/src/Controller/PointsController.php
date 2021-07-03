@@ -21,7 +21,7 @@ class PointsController extends AppController
     public function index()
     {
         $pointsArr = $this->Points->find('all');
-        
+        $pointsArr = mysqli_fetch_array($pointsArr);
         //$this->set(compact("points"));
         // $points = [
         //     'initialPointsMale' => $pointsArr[0]['initialPoint'],
