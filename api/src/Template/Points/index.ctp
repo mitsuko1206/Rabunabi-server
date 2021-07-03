@@ -26,11 +26,12 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                     </div>
                     
                     <div class="x_content">
-                        <?php $this->Form->create($pointsArr, ["id" => "frmSetting", "class" => "form-horizontal form-label-left"]);?>
+                        <br>
+                        <?= $this->Form->create($pointsArr, ["id" => "frmSetting", "class" => "form-horizontal form-label-left"]); ?>
                         
-                            <p>男性</p>
+                           
                             <div class="form-group">
-
+                                <p>男性</p>
                                 <div class="col-md-3 col-sm-12 col-xs-12">
                                 <label class="control-label col-md-12 col-sm-12 col-xs-12">初期ポイント</label>
                                     <?=$this->Form->control("initialPointsMale", ["label" => false, "value" => $points['initialPointsMale'], "type" => "number", "min" => "0", "step" => "1", "class" => "form-control"])?>
@@ -54,11 +55,10 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                                     <?=$this->Form->control("sendImageMale", ["label" => false, "value" => $points['sendImageMale'], "type" => "number", "min" => "0", "step" => "1", "class" => "form-control"])?>
                                 </div>
                             </div>
-                            <br />
-                            <br />
-                            <p>女性</p>
+                            
+                            
                             <div class="form-group">
-
+                                <p>女性</p>
                                 <div class="col-md-3 col-sm-12 col-xs-12">
                                 <label class="control-label col-md-12 col-sm-12 col-xs-12">初期ポイント</label>
                                     <?=$this->Form->control("initialPointsMale", ["label" => false, "value" => $points['initialPointsMale'], "type" => "number", "min" => "0", "step" => "1", "class" => "form-control"])?>
@@ -91,7 +91,7 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
 
 
                         
-                        <?=$this->Form->end()?>
+                        <?= $this->Form->end() ?>
 
 
                     </div>
