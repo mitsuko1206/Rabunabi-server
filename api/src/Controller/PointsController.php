@@ -20,7 +20,7 @@ class PointsController extends AppController
 
     public function index()
     {
-        $pointsArr = $this->Points->find('all');
+        $pointsArr = $this->Points->find();
         $pointsArr = mysqli_fetch_array($pointsArr);
         //$this->set(compact("points"));
         // $points = [
@@ -33,7 +33,7 @@ class PointsController extends AppController
         //     // 'readMessageFemale' => $pointsArr[1]['Points']['readMessage'],
         //     // 'sendImageFemale' => $pointsArr[1]['Points']['sendImage'],
         // ];
-        dd($pointsArr[0]);
+        dd($pointsArr);
         $this->set('pointsArr', compact('pointsArr'));
     }
 }
