@@ -231,7 +231,7 @@ class AccountsController extends ApiAppController
         $account->in_group = Account::STATUS_NORMAL;
         $account->status = Account::STATUS_NORMAL;
         $account->revision = 1;
-        $account->point = $point['initialPoints'];
+        // $account->point = $point['initialPoints'];
         if ($this->Accounts->save($account)) {
 	        if (isset($dataPost["avatar"])) {
 		        if (!isset($dataPost["avatar"]["size"])) {
