@@ -20,6 +20,7 @@ use Firebase\JWT\JWT;
  * @property \App\Model\Table\AccountBlocksTable $AccountBlocks
  * @property \App\Model\Table\AccountReportsTable $AccountReports
  * @property \App\Model\Table\AccountFriendsTable $AccountFriends
+ * @property PointsTable $Points
  *
  */
 class AccountsController extends ApiAppController
