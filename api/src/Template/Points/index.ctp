@@ -26,7 +26,7 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                     </div>
                     
                     <div class="x_content">
-                        <?php $this->Form->create( );?>
+                        <?php $this->Form->create();?>
                         
                             <p>男性</p>
                             <div class="form-group">
