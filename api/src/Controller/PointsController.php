@@ -24,15 +24,15 @@ class PointsController extends AppController
         
         $points = [
             'initialPointsMale' => $pointsArr[0]['initialPoint'],
-            'sendMessageMale' => $pointsArr[0]['Points']['sendMessage'],
-            'readMessageMale' => $pointsArr[0]['Points']['readMessage'],
-            'sendImageMale' => $pointsArr[0]['Points']['sendImage'],
-            'initialPointsFemale' => $pointsArr[1]['Points']['initialPoint'],
-            'sendMessageFemale' => $pointsArr[1]['Points']['sendMessage'],
-            'readMessageFemale' => $pointsArr[1]['Points']['readMessage'],
-            'sendImageFemale' => $pointsArr[1]['Points']['sendImage'],
+            'sendMessageMale' => $pointsArr[0]['sendMessage'],
+            'readMessageMale' => $pointsArr[0]['readMessage'],
+            'sendImageMale' => $pointsArr[0]['sendImage'],
+            'initialPointsFemale' => $pointsArr[1]['initialPoints'],
+            'sendMessageFemale' => $pointsArr[1]['sendMessage'],
+            'readMessageFemale' => $pointsArr[1]['readMessage'],
+            'sendImageFemale' => $pointsArr[1]['sendImage'],
         ];
-        dd($pointsArr[0]['initialPoints']);
+        dd($points);
         $this->set('pointsArr', compact('pointsArr'));
     }
 }
