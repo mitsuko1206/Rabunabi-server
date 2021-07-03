@@ -3,16 +3,7 @@
 $this->assign("title", __("ポイント"));
 echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
 
-$points = [
-    'initialPointsMale' => $pointsArr[0]['initialPoints'],
-    'sendMessageMale' => $pointsArr[0]['sendMessage'],
-    'readMessageMale' => $pointsArr[0]['readMessage'],
-    'sendImageMale' => $pointsArr[0]['sendImage'],
-    'initialPointsFemale' => $pointsArr[1]['initialPoints'],
-    'sendMessageFemale' => $pointsArr[1]['sendMessage'],
-    'readMessageFemale' => $pointsArr[1]['readMessage'],
-    'sendImageFemale' => $pointsArr[1]['sendImage'],
-];
+
 
 ?>
 <style>
@@ -36,7 +27,18 @@ $points = [
                         <h2>ポイント</h2>
                         <div class="clearfix"></div>
                     </div>
-                    <?php $this->Form->create($points);?>
+                    <?php 
+                    $points = [
+                        'initialPointsMale' => $pointsArr[0]['initialPoints'],
+                        'sendMessageMale' => $pointsArr[0]['sendMessage'],
+                        'readMessageMale' => $pointsArr[0]['readMessage'],
+                        'sendImageMale' => $pointsArr[0]['sendImage'],
+                        'initialPointsFemale' => $pointsArr[1]['initialPoints'],
+                        'sendMessageFemale' => $pointsArr[1]['sendMessage'],
+                        'readMessageFemale' => $pointsArr[1]['readMessage'],
+                        'sendImageFemale' => $pointsArr[1]['sendImage'],
+                    ];
+                    $this->Form->create($points);?>
                     <div class="x_content">
                         <div>
                         <p>男性</p>
