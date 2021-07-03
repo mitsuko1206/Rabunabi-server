@@ -19,6 +19,9 @@ class PointsController extends AppController
 
     public function index()
     {
+        if ($this->request->is(['POST', 'PUT'])) { 
+            dd($this->request->getData());
+        }
         $pointsArr = $this->Points->find()->toArray();
         //$pointsArr = mysqli_fetch_array($pointsArr);
         
