@@ -2,6 +2,18 @@
 /* @var \App\View\AppView $this */
 $this->assign("title", __("ポイント"));
 echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
+
+$points = [
+    'initialPointsMale' => $pointsArr[0]['initialPoints'],
+    'sendMessageMale' => $pointsArr[0]['sendMessage'],
+    'readMessageMale' => $pointsArr[0]['readMessage'],
+    'sendImageMale' => $pointsArr[0]['sendImage'],
+    'initialPointsFemale' => $pointsArr[1]['initialPoints'],
+    'sendMessageFemale' => $pointsArr[1]['sendMessage'],
+    'readMessageFemale' => $pointsArr[1]['readMessage'],
+    'sendImageFemale' => $pointsArr[1]['sendImage'],
+];
+dd($points);
 ?>
 <style>
     .checkbox{
@@ -24,30 +36,50 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                         <h2>ポイント</h2>
                         <div class="clearfix"></div>
                     </div>
-                    <?php $this->Form->create($pointsArr);?>
+                    <?php $this->Form->create($points);?>
                     <div class="x_content">
-                        <br>
-
                         <div>
-                                <?php 
-                                 $points = [
-                                    'initialPointsMale' => $pointsArr[0]['initialPoints'],
-                                    'sendMessageMale' => $pointsArr[0]['sendMessage'],
-                                    'readMessageMale' => $pointsArr[0]['readMessage'],
-                                    'sendImageMale' => $pointsArr[0]['sendImage'],
-                                    'initialPointsFemale' => $pointsArr[1]['initialPoints'],
-                                    'sendMessageFemale' => $pointsArr[1]['sendMessage'],
-                                    'readMessageFemale' => $pointsArr[1]['readMessage'],
-                                    'sendImageFemale' => $pointsArr[1]['sendImage'],
-                                ];
-                                dd($points); ?>
-                               <p><?php echo $points ?></p>
-                            
-                               <p>男性</p>
+                        <p>男性</p>
                             <br>
 
-                           
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                    初期ポイント
+                                </label>
+                                <div class="col-md-3 col-sm-3 col-xs-12">
+                                    <?=$this->Form->control("initialPointsMale", ["label" => false, "class" => "form-control"])?>
+                                </div>
+
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                送る
+                                </label>
+                                <div class="col-md-3 col-sm-3 col-xs-12">
+                                    <?=$this->Form->control("sendMessageMale", ["label" => false, "class" => "form-control"])?>
+                                </div>
+
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                読む
+                                </label>
+                                <div class="col-md-3 col-sm-3 col-xs-12">
+                                    <?=$this->Form->control("readMessageMale", ["label" => false, "class" => "form-control"])?>
+                                </div>
+
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                画像を送る
+                                </label>
+                                <div class="col-md-3 col-sm-3 col-xs-12">
+                                    <?=$this->Form->control("sendImageMale", ["label" => false, "class" => "form-control"])?>
+                                </div>
+                            </div>
+
+
+                            <p>初期ポイント</p>
+
+
+                            <p>女性</p>
                         </div>
+
+
 
                     </div>
                     <?=$this->Form->end()?>
