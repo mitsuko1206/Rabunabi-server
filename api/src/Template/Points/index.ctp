@@ -13,7 +13,7 @@ $points = [
     'readMessageFemale' => $pointsArr[1]['readMessage'],
     'sendImageFemale' => $pointsArr[1]['sendImage'],
 ];
-dd($points);
+
 ?>
 <style>
     .checkbox{
