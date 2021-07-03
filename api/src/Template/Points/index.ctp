@@ -29,7 +29,7 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                         <br>
 
                         <div>
-                                
+                                <?php dd($points); ?>
                                <p><?php echo $points ?></p>
                             
                                <p>男性</p>
