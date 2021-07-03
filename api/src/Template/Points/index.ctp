@@ -24,9 +24,10 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                         <h2>ポイント</h2>
                         <div class="clearfix"></div>
                     </div>
-                    <?php $this->Form->create( );?>
+                    
                     <div class="x_content">
-                        <div>
+                        <?php $this->Form->create( );?>
+                        
                             <p>男性</p>
                             <div class="form-group">
 
@@ -89,12 +90,12 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                             </div>
 
 
-                        </div>
-
+                        
+                        <?=$this->Form->end()?>
 
 
                     </div>
-                    <?=$this->Form->end()?>
+                    
                 </div>
             </div>
         </div>
