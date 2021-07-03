@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\Table\PointsTable;
+use Cake\ORM\TableRegistry;
 
 /**
  * Points Controller
@@ -20,10 +21,27 @@ class PointsController extends AppController
     public function index()
     {
         if ($this->request->is(['POST', 'PUT'])) { 
-            dd($this->request->getData());
+
+            $postData = $this->request->getData();
+
+            $pointsTable = TableRegistry::getTableLocator()->get('Points');
+            $point = $pointsTable->get(1); // Return point with id 1
+
+            $article->initialPoints = $postData['initialPointsMale'];
+            $article->sendMessage = $postData['sendMessageMale'];
+            $article->readMessage = $postData['readMessageMale'];
+            $article->sendImage = $postData['sendImageMale'];
+            $pointsTable->save($article);
+
+            $point = $pointsTable->get(2); // Return point with id 2
+
+            $article->initialPoints = $postData['initialPointsFemale'];
+            $article->sendMessage = $postData['sendMessageFemale'];
+            $article->readMessage = $postData['readMessageFemale'];
+            $article->sendImage = $postData['sendImageFemale'];
+            $pointsTable->save($article);
         }
         $pointsArr = $this->Points->find()->toArray();
-        //$pointsArr = mysqli_fetch_array($pointsArr);
         
         $points = [
             'initialPointsMale' => $pointsArr[0]['initialPoints'],
