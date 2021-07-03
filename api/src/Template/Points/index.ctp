@@ -4,7 +4,7 @@ $this->assign("title", __("ポイント"));
 echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
 
 
-
+dd($points)
 ?>
 <style>
     .checkbox{
