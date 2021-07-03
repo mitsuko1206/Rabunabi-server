@@ -7,8 +7,7 @@ use App\Model\Table\PointsTable;
 /**
  * Points Controller
  *
- * @property \App\Model\Table\PointsTable $Points
- *
+ * @property SettingsTable $Points
  */
 class PointsController extends AppController
 {
