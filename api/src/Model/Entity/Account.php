@@ -25,6 +25,7 @@ use Cake\ORM\Entity;
  * @property int $avatar_status
  * @property string $prefecture
  * @property boolean $flg_push
+ * @property int $point
  * @property \Cake\I18n\FrozenTime $modified
  * @property \Cake\I18n\FrozenTime $created
  *

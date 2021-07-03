@@ -18,6 +18,7 @@ use Firebase\JWT\JWT;
  * @property \App\Model\Table\AccountBlocksTable $AccountBlocks
  * @property \App\Model\Table\AccountReportsTable $AccountReports
  * @property \App\Model\Table\AccountFriendsTable $AccountFriends
+ * @property \App\Model\Table\PointsTable $Points
  *
  */
 class AccountsController extends ApiAppController
@@ -221,13 +222,13 @@ class AccountsController extends ApiAppController
         ) {
             return $this->responseData(["error_code" => 101]);
         }
-
+        $point = $this->Points->find()->where(['male' => $dataPost['gender'] == 1])->first();
         $account = $this->Accounts->newEntity($dataPost);
         $account->device_id = $device->id;
         $account->in_group = Account::STATUS_NORMAL;
         $account->status = Account::STATUS_NORMAL;
         $account->revision = 1;
-
+        $account->point = $point['initialPoints'];
         if ($this->Accounts->save($account)) {
 	        if (isset($dataPost["avatar"])) {
 		        if (!isset($dataPost["avatar"]["size"])) {
