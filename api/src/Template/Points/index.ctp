@@ -24,12 +24,12 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                         <h2>ポイント</h2>
                         <div class="clearfix"></div>
                     </div>
-                    <?php $this->Form->create($points);?>
+                    <?php $this->Form->create($pointsArr);?>
                     <div class="x_content">
                         <br>
 
                         <div>
-                                <?php dd($points); ?>
+                                <?php dd($pointsArr); ?>
                                <p><?php echo $points ?></p>
                             
                                <p>男性</p>
