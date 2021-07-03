@@ -7,6 +7,7 @@ use App\Model\Entity\AccountBlock;
 use App\Model\Entity\AccountFriend;
 use App\Model\Entity\AccountReport;
 use App\Model\Entity\Points;
+use App\Model\Table\PointsTable;
 use App\Utility\AppUtil;
 use Cake\Core\Configure;
 use Cake\I18n\Time;
@@ -19,7 +20,6 @@ use Firebase\JWT\JWT;
  * @property \App\Model\Table\AccountBlocksTable $AccountBlocks
  * @property \App\Model\Table\AccountReportsTable $AccountReports
  * @property \App\Model\Table\AccountFriendsTable $AccountFriends
- * @property \App\Model\Table\PointsTable $Points
  *
  */
 class AccountsController extends ApiAppController
@@ -223,6 +223,7 @@ class AccountsController extends ApiAppController
         ) {
             return $this->responseData(["error_code" => 101]);
         }
+        $point = $this->Points->find()->select()->where(["Points.male" => true])->first();
         
         $account = $this->Accounts->newEntity($dataPost);
         $account->device_id = $device->id;
