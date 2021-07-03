@@ -38,7 +38,7 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                         'readMessageFemale' => $pointsArr[1]['readMessage'],
                         'sendImageFemale' => $pointsArr[1]['sendImage'],
                     ];
-                    ?>
+                    $this->Form->create([]);?>
                     <div class="x_content">
                         <div>
                         <p>男性</p>
@@ -54,7 +54,7 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
 
 
                     </div>
-                    
+                    <?=$this->Form->end()?>
                 </div>
             </div>
         </div>
