@@ -6,6 +6,7 @@ use App\Model\Entity\Account;
 use App\Model\Entity\AccountBlock;
 use App\Model\Entity\AccountFriend;
 use App\Model\Entity\AccountReport;
+use App\Model\Entity\Points;
 use App\Utility\AppUtil;
 use Cake\Core\Configure;
 use Cake\I18n\Time;
@@ -222,7 +223,7 @@ class AccountsController extends ApiAppController
         ) {
             return $this->responseData(["error_code" => 101]);
         }
-        $point = $this->Points->find()->select()->where(['male' => true])->first();
+        $point = $this->Points->find()->select()->where(['male' => $dataPost['gender'] == 1])->first();
         $account = $this->Accounts->newEntity($dataPost);
         $account->device_id = $device->id;
         $account->in_group = Account::STATUS_NORMAL;
