@@ -32,7 +32,7 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                                 
                                 <div class="col-md-3 col-sm-12 col-xs-12">
                                 <label class="control-label col-md-12 col-sm-12 col-xs-12">初期ポイント</label>
-                                    <?=$this->Form->control("initialPointsMale", ["label" => false, "class" => "form-control"])?>
+                                    <?=$this->Form->control("initialPointsMale", ["label" => false, "value" => $points['initialPointsMale'],  "class" => "form-control"])?>
                                 </div>
 
                                
@@ -53,6 +53,7 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                                     <?=$this->Form->control("sendImageMale", ["label" => false, "class" => "form-control"])?>
                                 </div>
                             </div>
+                            <br><br>
                             <p>女性</p>
                             <div class="form-group">
                                 
