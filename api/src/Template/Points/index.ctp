@@ -56,7 +56,8 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                                 </div>
                             </div>
                             
-                            
+                            <br>
+                            <br>
                             <div class="form-group">
                                 <p>女性</p>
                                 <div class="col-md-3 col-sm-12 col-xs-12">
