@@ -23,7 +23,7 @@ class PointsController extends AppController
         //$pointsArr = mysqli_fetch_array($pointsArr);
         
         $points = [
-            'initialPointsMale' => $pointsArr[0]['initialPoint'],
+            'initialPointsMale' => $pointsArr[0]['initialPoints'],
             'sendMessageMale' => $pointsArr[0]['sendMessage'],
             'readMessageMale' => $pointsArr[0]['readMessage'],
             'sendImageMale' => $pointsArr[0]['sendImage'],
@@ -32,7 +32,6 @@ class PointsController extends AppController
             'readMessageFemale' => $pointsArr[1]['readMessage'],
             'sendImageFemale' => $pointsArr[1]['sendImage'],
         ];
-        dd($points);
-        $this->set('pointsArr', compact('pointsArr'));
+        $this->set('points');
     }
 }
