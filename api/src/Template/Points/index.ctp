@@ -30,6 +30,36 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                         <p>男性</p>
                             <br>
 
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                    初期ポイント
+                                </label>
+                                <div class="col-md-3 col-sm-3 col-xs-12">
+                                    <?=$this->Form->control("initialPointsMale", ["label" => false, "class" => "form-control"])?>
+                                </div>
+
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                送る
+                                </label>
+                                <div class="col-md-3 col-sm-3 col-xs-12">
+                                    <?=$this->Form->control("sendMessageMale", ["label" => false, "class" => "form-control"])?>
+                                </div>
+
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                読む
+                                </label>
+                                <div class="col-md-3 col-sm-3 col-xs-12">
+                                    <?=$this->Form->control("readMessageMale", ["label" => false, "class" => "form-control"])?>
+                                </div>
+
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                画像を送る
+                                </label>
+                                <div class="col-md-3 col-sm-3 col-xs-12">
+                                    <?=$this->Form->control("sendImageMale", ["label" => false, "class" => "form-control"])?>
+                                </div>
+                            </div>
+
 
                             <p>初期ポイント</p>
 
