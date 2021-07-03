@@ -219,7 +219,8 @@ class AccountsController extends ApiAppController
 
         if (!isset($dataPost["nickname"]) ||
             !isset($dataPost["gender"]) ||
-            !isset($dataPost["nationality"])
+            !isset($dataPost["nationality"]) ||
+            !isset($dataPost["prefecture"])
         ) {
             return $this->responseData(["error_code" => 101]);
         }
@@ -289,7 +290,7 @@ class AccountsController extends ApiAppController
                 "purpose" => AppUtil::handleStringNull($account->purpose),
             ]);
 
-            return $this->responseData(['status' => true, 'data' => ["Authorization" => $jwt_token]]);
+            return $this->responseData(['status' => true, 'data' => ["Authorization" => $jwt_token, "payload" => $payload]]);
         } else {
             return $this->responseData(["error_code" => 600]);
         }
