@@ -29,31 +29,35 @@ echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
                         <div>
                         <p>男性</p>
                             <div class="form-group">
+                                
+                                <div class="col-md-12 col-sm-12 col-xs-12">
                                 <label class="control-label col-md-12 col-sm-12 col-xs-12">
                                     初期ポイント
                                 </label>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
                                     <?=$this->Form->control("initialPointsMale", ["label" => false, "class" => "form-control"])?>
                                 </div>
 
+                               
+                                <div class="col-md-12 col-sm-12 col-xs-12">
                                 <label class="control-label col-md-12 col-sm-12 col-xs-12">
                                 送る
                                 </label>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
                                     <?=$this->Form->control("sendMessageMale", ["label" => false, "class" => "form-control"])?>
                                 </div>
 
+                               
+                                <div class="col-md-12 col-sm-12 col-xs-12">
                                 <label class="control-label col-md-12 col-sm-12 col-xs-12">
                                 読む
                                 </label>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
                                     <?=$this->Form->control("readMessageMale", ["label" => false, "class" => "form-control"])?>
                                 </div>
 
+                                
+                                <div class="col-md-12 col-sm-12 col-xs-12">
                                 <label class="control-label col-md-12 col-sm-12 col-xs-12">
                                 画像を送る
                                 </label>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
                                     <?=$this->Form->control("sendImageMale", ["label" => false, "class" => "form-control"])?>
                                 </div>
                             </div>
