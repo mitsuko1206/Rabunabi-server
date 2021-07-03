@@ -2,9 +2,6 @@
 /* @var \App\View\AppView $this */
 $this->assign("title", __("ポイント"));
 echo $this->Html->script("https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js");
-
-
-dd($points)
 ?>
 <style>
     .checkbox{
@@ -27,7 +24,7 @@ dd($points)
                         <h2>ポイント</h2>
                         <div class="clearfix"></div>
                     </div>
-                    <?php $this->Form->create($pointsArr);?>
+                    <?php $this->Form->create($points);?>
                     <div class="x_content">
                         <div>
                         <p>男性</p>
