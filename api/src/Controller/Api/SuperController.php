@@ -5,6 +5,7 @@ namespace App\Controller\Api;
 use App\Model\Entity\AccountFriend;
 use App\Model\Table\DevicesTable;
 use App\Utility\AppUtil;
+use App\Model\Entity\Points;
 use Cake\I18n\Time;
 use Firebase\JWT\JWT;
 
@@ -12,6 +13,7 @@ use Firebase\JWT\JWT;
  * Super Controller
  *
  * @property DevicesTable $Devices
+ * @property \App\Model\Table\PointsTable $Points
  */
 class SuperController extends ApiAppController {
 	public function initialize() {
@@ -33,6 +35,14 @@ class SuperController extends ApiAppController {
 			                           'user_agent' => $this->clientDevice['user-agent'],
 		                           ] )->first();
 		$jwt_token = '';
+		$this->loadModel("Points");
+        $point = $this->Points->find()->select()->where(['Points.male' => $dataPost['gender'] == 0])->first();
+		$points = [
+			"points" => $point['initialPoints'],
+			"sendMessage" => $point['sendMessage'],
+			"readMessage" => $point['readMessage'],
+			"sendImage" => $point['sendImage']
+		];
 		if ( $device ) {
 			$account = $this->Devices->Accounts->find()->select( [
 				"Accounts.id",
@@ -54,15 +64,24 @@ class SuperController extends ApiAppController {
 						"avatar"      => AppUtil::handleStringNull( $account->avatar ),
 						"revision"    => $account->revision,
 						"status"      => $account->status,
+						"point"		  => $account->point,
 						"user_agent"  => $this->clientDevice['user-agent'],
 						"push_token"  => $device->push_token
 					],
+				];
+				$points = [
+					"points" => $account->point,
+					"sendMessage" => $point['sendMessage'],
+					"readMessage" => $point['readMessage'],
+					"sendImage" => $point['sendImage']
 				];
 				$jwt_token = JWT::encode( $payload, $this->_apiConfig["jwt_key"] );
 			}
 		} else {
 			$device = $this->Devices->newEntity();
 		}
+
+		
 		$device->uuid        = $this->clientDevice['uuid'];
 		$device->user_agent  = $this->clientDevice['user-agent'];
 		$device->version     = $this->clientDevice['version'];
@@ -79,6 +98,7 @@ class SuperController extends ApiAppController {
 			"title_notify_en"  => $setting->title_ads_en,
 			"show_notify"   => $setting->show_notify,
 			"count_ads"     => $setting->count_ads,
+			"points"		=> $points
 		];
 
 		if ( $this->Devices->save( $device ) ) {
