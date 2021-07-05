@@ -10,6 +10,8 @@ var accountModel = require('./models/accounts');
 var messageModel = require('./models/messages');
 var contactModel = require('./models/contacts');
 var contactMessageModel = require('./models/contact_messages');
+const { Accounts } = require('./db/models');
+
 /* END - MODEL */
 
 var socket_chat_ns = '/chat';
@@ -376,6 +378,11 @@ module.exports = function (io) {
                     }
                 }
                 chatio.to(room_id).emit('receive:message', dataReturn);
+            });
+            Accounts.findOne({where: {id: user_info.id}}).then((account)=> {
+
+                account.point -= data.point;
+                account.save()
             });
         });
 

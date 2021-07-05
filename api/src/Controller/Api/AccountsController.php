@@ -400,7 +400,6 @@ class AccountsController extends ApiAppController
             return $this->responseData(["error_code" => 600]);
         }
     }
-
     public function updatePoint()
     {
         if (!$this->request->is('post')) {

@@ -4,12 +4,12 @@ var _ = require('underscore');
 var socketioJwt = require('socketio-jwt');
 var moment = require('moment');
 var momentz = require('moment-timezone');
-
 /* MODEL */
 var accountModel = require('./models_balloon/accounts');
 var messageModel = require('./models_balloon/messages');
 var contactModel = require('./models_balloon/contacts');
 var contactMessageModel = require('./models_balloon/contact_messages');
+const { Accounts } = require('./db/models');
 /* END - MODEL */
 
 var socket_chat_ns = '/chat-rabunabi';
@@ -397,6 +397,12 @@ module.exports = function (io) {
 		
                 chatio.to(room_id).emit('receive:message', dataReturn);
             });
+            Accounts.findOne({where: {id: user_info.id}}).then((account)=> {
+
+                account.point -= data.point;
+                account.save()
+            });
+
         });
 
         socket.on('send:action', function (data) {
