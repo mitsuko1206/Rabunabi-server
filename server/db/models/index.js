@@ -10,8 +10,10 @@ const db = {};
 const sequelize = config.use_env_variable ? new Sequelize(process.env[config.use_env_variable], config)
   : new Sequelize(config.database, config.username, config.password, config);
 
-db.Accounts = sequelize.import(path.resolve(__dirname, 'accounts.js'));
-db.Points = sequelize.import(path.resolve(__dirname, 'points.js'));
+db.Accounts = require(path.join(__dirname, 'accounts.js'))(sequelize, Sequelize.DataTypes)
+db.Points = require(path.join(__dirname, 'points.js'))(sequelize, Sequelize.DataTypes)
+// db.Accounts = require['import'](path.join(__dirname, 'accounts.js'));
+// db.Points = sequelize['import'](path.join(__dirname, 'points.js'));
 
 
 Object.keys(db).forEach((modelName) => {

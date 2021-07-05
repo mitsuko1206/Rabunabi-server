@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     const Points = sequelize.define('v', {
-        id: DataTypes.INTEGER,
+        
         male: DataTypes.BOOLEAN,
         initialPoints: DataTypes.INTEGER,
         sendMessage: DataTypes.INTEGER,
@@ -13,5 +13,5 @@ module.exports = function(sequelize, DataTypes) {
         classMethods: {}
     }, );
 
-    return Accounts;
+    return Points;
 };
