@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
         point: DataTypes.INTEGER
     }, {
         tableName: 'accounts',
-        paranoid: true,
+        paranoid: false,
         classMethods: {}
     }, );
 
