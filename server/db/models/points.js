@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
     }, {
         tableName: 'points',
         paranoid: false,
-
+        timestamps: false,
         classMethods: {}
     }, );
 

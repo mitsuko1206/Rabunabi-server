@@ -5,6 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     }, {
         tableName: 'accounts',
         paranoid: false,
+        timestamps: false,
         classMethods: {}
     }, );
 
