@@ -70,7 +70,7 @@ class SuperController extends ApiAppController {
 					],
 				];
 				$points = [
-					"points" => $account->point,
+					"points" => $point['initialPoints'],
 					"sendMessage" => $point['sendMessage'],
 					"readMessage" => $point['readMessage'],
 					"sendImage" => $point['sendImage']
