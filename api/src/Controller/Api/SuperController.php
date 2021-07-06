@@ -52,7 +52,8 @@ class SuperController extends ApiAppController {
 				"Accounts.gender",
 				"Accounts.revision",
 				"Accounts.avatar",
-				"Accounts.status"
+				"Accounts.status",
+				"Accounts.point"
 			] )->where( [ "Accounts.device_id" => $device->id ] )->first();
 			if ( $account ) {
 				$payload   = [
