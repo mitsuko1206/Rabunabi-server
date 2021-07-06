@@ -21,6 +21,7 @@ use MongoDB\Collection;
  * @property \App\Model\Table\AccountBlocksTable $AccountBlocks
  * @property \App\Model\Table\AccountReportsTable $AccountReports
  * @property \App\Model\Table\AccountFriendsTable $AccountFriends
+ * @property \App\Model\Table\AccountsTable $Accounts
  */
 class TalkController extends ApiAppController {
 
@@ -502,6 +503,11 @@ class TalkController extends ApiAppController {
                     '_id' => - 1,
                 ]
             ])->toArray();
+			$this->loadModel("Accounts");
+			$acc = $this->Accounts->find()->select()->where(['Accounts.id' => $this->authUser->id])->first();
+			$acc['point'] -= $dataPost["sendImage"];
+			$this->Accounts->save($acc);
+
             if (!empty($result)) {
                 $dataReturn = [
                     "id" => strval($result[0]["_id"]),
