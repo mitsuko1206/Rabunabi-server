@@ -36,7 +36,7 @@ class SuperController extends ApiAppController {
 		                           ] )->first();
 		$jwt_token = '';
 		$this->loadModel("Points");
-        $point = $this->Points->find()->select()->where(['Points.male' => $dataPost['gender'] == 0])->first();
+        
 		$points = [
 			"points" => $point['initialPoints'],
 			"sendMessage" => $point['sendMessage'],
@@ -72,8 +72,9 @@ class SuperController extends ApiAppController {
 					],
 				];
 				$profile = $payload['profile'];
+				$point = $this->Points->find()->select()->where(['Points.male' => $dataPost['gender'] == 1])->first();
 				$points = [
-					"points" => $point['initialPoints'],
+					"points" => $point['point'],
 					"sendMessage" => $point['sendMessage'],
 					"readMessage" => $point['readMessage'],
 					"sendImage" => $point['sendImage']
