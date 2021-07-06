@@ -43,6 +43,7 @@ class SuperController extends ApiAppController {
 			"readMessage" => $point['readMessage'],
 			"sendImage" => $point['sendImage']
 		];
+		$profile=[];
 		if ( $device ) {
 			$account = $this->Devices->Accounts->find()->select( [
 				"Accounts.id",
@@ -69,6 +70,7 @@ class SuperController extends ApiAppController {
 						"push_token"  => $device->push_token
 					],
 				];
+				$profile = $payload['profile'];
 				$points = [
 					"points" => $point['initialPoints'],
 					"sendMessage" => $point['sendMessage'],
@@ -98,7 +100,8 @@ class SuperController extends ApiAppController {
 			"title_notify_en"  => $setting->title_ads_en,
 			"show_notify"   => $setting->show_notify,
 			"count_ads"     => $setting->count_ads,
-			"points"		=> $points
+			"points"		=> $points,
+			'profile'		=> $profile
 		];
 
 		if ( $this->Devices->save( $device ) ) {

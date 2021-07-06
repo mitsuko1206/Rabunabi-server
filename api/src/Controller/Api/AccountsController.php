@@ -371,6 +371,16 @@ class AccountsController extends ApiAppController
                 "marriage" => AppUtil::handleStringNull($this->authUser->marriage),
                 "purpose" => AppUtil::handleStringNull($this->authUser->purpose),
             ];
+            $this->loadModel("Points");
+            $point = $this->Points->find()->select()->where(['Points.male' => $dataPost['gender'] == 0])->first();
+            
+            $points = [
+                "points" => $point['initialPoints'],
+                "sendMessage" => $point['sendMessage'],
+                "readMessage" => $point['readMessage'],
+                "sendImage" => $point['sendImage']
+            ];
+            
             $auth = $this->request->getHeader("Authorization");
             $JWTDecoded = JWT::decode($auth[0], $this->_apiConfig['jwt_key'], ['HS256']);
             $payload = [
