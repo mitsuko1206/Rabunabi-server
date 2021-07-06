@@ -90,6 +90,7 @@ $this->assign("title", __("ユーザー抽出"));
                                     <th class="column-title"><?= __("最終ログイン日時") ?></th>
                                     <th class="column-title"><?= __("登録日時") ?></th>
                                     <th class="column-title"><?= __("ステータス") ?></th>
+                                    <th class="column-title"><?= __("ポイント") ?></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -133,6 +134,7 @@ $this->assign("title", __("ユーザー抽出"));
                                     <td><?= $account->device->last_access->timezone(\Cake\Core\Configure::read("COMMON.timezone"))->format("Y-m-d H:i:s") ?></td>
                                     <td><?= $account->created->timezone(\Cake\Core\Configure::read("COMMON.timezone"))->format("Y-m-d H:i:s") ?></td>
                                     <td><?= \App\Model\Entity\Account::getStatus()[$account->status] ?></td>
+                                    <td><?= $account->point ?></td>
                                 </tr>
                                 <?php endforeach; ?>
                                 </tbody>
