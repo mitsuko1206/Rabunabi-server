@@ -97,6 +97,12 @@ module.exports = function (io) {
                 action: room_id,
                 msg: 'Success'
             });
+            Accounts.findOne({where: {id: user_info.id}}).then((account)=> {
+
+                account.point -= data.point;
+                account.save()
+            });
+
         });
 
         socket.on('leave:room', function (data) {
