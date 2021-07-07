@@ -89,7 +89,7 @@ module.exports = function (io) {
             var room_id = genRoomID(user_info.id, data.friend_id);
             //Get socket already in current room
             var sockets = getSocketsInRoom(io, room_id, socket_chat_ns);
-            console.log('join:room ' + room_id + ' -- ' + user_info.id);
+            console.log('join:roommm ' + room_id + ' -- ' + user_info.id);
             console.log('here')
 
             Accounts.findOne({where: {id: user_info.id}}).then((account)=> {
