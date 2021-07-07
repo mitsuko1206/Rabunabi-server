@@ -228,7 +228,7 @@ class AccountsController extends ApiAppController
         $point = [];
         // if ($dataPost['gender'] == '1') 
         // {
-            $point = $this->Points->find()->select()->where(['Points.id' => 2])->first();
+        $point = $this->Points->find()->select()->where(['Points.id' => (int)$dataPost['gender']])->first();
         // }
         // else{
         //     $point = $this->Points->find()->select()->where(['Points.male' => false])->first();
@@ -238,8 +238,7 @@ class AccountsController extends ApiAppController
         $account->in_group = Account::STATUS_NORMAL;
         $account->status = Account::STATUS_NORMAL;
         $account->revision = 1;
-        // $account->point = $point['initialPoints'];
-        $account->point = (int)$dataPost['gender'];
+        $account->point = $point['initialPoints'];
         if ($this->Accounts->save($account)) {
 	        if (isset($dataPost["avatar"])) {
 		        if (!isset($dataPost["avatar"]["size"])) {
@@ -277,8 +276,7 @@ class AccountsController extends ApiAppController
                 ],
             ];
             $points = [
-                // "points" => $point['initialPoints'],
-                "points" => (int)$dataPost['gender'],
+                "points" => $point['initialPoints'],
                 "sendMessage" => $point['sendMessage'],
                 "readMessage" => $point['readMessage'],
                 "sendImage" => $point['sendImage']
