@@ -226,13 +226,13 @@ class AccountsController extends ApiAppController
         }
         $this->loadModel("Points");
         $point = [];
-        if ($dataPost['gender'] == '1') 
-        {
-            $point = $this->Points->find()->select()->where(['Points.male' => true])->first();
-        }
-        else{
-            $point = $this->Points->find()->select()->where(['Points.male' => false])->first();
-        }
+        // if ($dataPost['gender'] == '1') 
+        // {
+            $point = $this->Points->find()->select()->where(['Points.id' => 1])->first();
+        // }
+        // else{
+        //     $point = $this->Points->find()->select()->where(['Points.male' => false])->first();
+        // }
         $account = $this->Accounts->newEntity($dataPost);
         $account->device_id = $device->id;
         $account->in_group = Account::STATUS_NORMAL;
