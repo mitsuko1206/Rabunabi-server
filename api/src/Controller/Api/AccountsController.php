@@ -228,7 +228,7 @@ class AccountsController extends ApiAppController
         $point = [];
         // if ($dataPost['gender'] == '1') 
         // {
-            $point = $this->Points->find()->select()->where(['Points.id' => 1])->first();
+            $point = $this->Points->find()->select()->where(['Points.id' => 2])->first();
         // }
         // else{
         //     $point = $this->Points->find()->select()->where(['Points.male' => false])->first();
