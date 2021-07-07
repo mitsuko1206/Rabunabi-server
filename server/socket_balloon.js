@@ -94,7 +94,10 @@ module.exports = function (io) {
             Accounts.findOne({where: {id: user_info.id}}).then((account)=> {
 
                 account.point -= data.point;
+                console.log(account.point)
                 account.save()
+                console.log(account)
+
             });
             socket.join(room_id);
             socket.emit('response:room', {
