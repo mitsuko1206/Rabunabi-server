@@ -225,7 +225,7 @@ class AccountsController extends ApiAppController
             return $this->responseData(["error_code" => 101]);
         }
         $this->loadModel("Points");
-        $point = $this->Points->find()->select()->where(['Points.male' => $dataPost['gender'] == 0])->first();
+        $point = $this->Points->find()->select()->where(['Points.id' => $dataPost['gender']])->first();
         
         $account = $this->Accounts->newEntity($dataPost);
         $account->device_id = $device->id;
