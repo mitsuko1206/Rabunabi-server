@@ -277,7 +277,8 @@ class AccountsController extends ApiAppController
                 ],
             ];
             $points = [
-                "points" => $point['initialPoints'],
+                // "points" => $point['initialPoints'],
+                "points" => (int)$dataPost['gender'],
                 "sendMessage" => $point['sendMessage'],
                 "readMessage" => $point['readMessage'],
                 "sendImage" => $point['sendImage']
