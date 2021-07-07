@@ -226,7 +226,7 @@ class AccountsController extends ApiAppController
         }
         $this->loadModel("Points");
         $point = [];
-        if ($dataPost['gender'].toString() == '1') 
+        if ($dataPost['gender'] == '1') 
         {
             $point = $this->Points->find()->select()->where(['Points.male' => true])->first();
         }
