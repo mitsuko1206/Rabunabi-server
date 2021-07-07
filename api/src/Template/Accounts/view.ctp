@@ -67,6 +67,10 @@ $this->assign("title", __("ユーザー情報"));
                             <?= $this->Form->control("status", ["label" => false, "type" => "select", "options" => \App\Model\Entity\Account::getStatus(), "class" => "form-control"]); ?>
                         </div>
                         <div class="form-group">
+                            <label><?= __("ポイント") ?></label>
+                            <p><?= $this->Form->control("point", ["label" => false, "class" => "form-control"]) ?></p>
+                        </div>
+                        <div class="form-group">
                             <button type="submit" class="btn btn-success">Save</button>
                             <div class="pull-right">
 		                        <?= $this->Html->link('Delete', ['action' => 'delete', $account->id], ['class' => 'btn btn-danger', 'confirm' => 'Are you sure ?']) ?>
