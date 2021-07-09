@@ -195,7 +195,21 @@ class TalkController extends ApiAppController {
 
 		return $this->responseData( [ "status" => true, "data" => $dataReturn ] );
 	}
-
+	public function decreasePoint() {
+		$this->loadModel( "Accounts" );
+		if ( ! $this->request->is( "POST" ) ) {
+			return $this->responseData( [ "error_code" => 100 ] );
+		}
+		$dataPost = $this->request->getData();
+		if ( ! isset( $dataPost["point"] )) {
+			return $this->responseData( [ "error_code" => 101 ] );
+		}
+		$this->loadModel("Accounts");
+		$acc = $this->Accounts->find()->select()->where(['Accounts.id' => $this->authUser->id])->first();
+		$acc['point'] -= $dataPost["point"];
+		$this->Accounts->save($acc);
+		return $this->responseData(["status" => true, 'point' => $acc['point']]);
+	}
 	public function getContactHistory() {
 		if ( ! $this->request->is( "GET" ) ) {
 			return $this->responseData( [ "error_code" => 100 ] );
@@ -282,42 +296,7 @@ class TalkController extends ApiAppController {
 			$friends[] = $tmp_friend->account_action_id == $this->authUser->id ? $tmp_friend->account_receive_id : $tmp_friend->account_action_id;
 		}
 
-//		$this->loadModel( "AccountBlocks" );
-//		$tmp_blocks = $this->AccountBlocks
-//			->find()
-//			->select( [
-//				"AccountBlocks.account_receive_id",
-//				"AccountBlocks.account_action_id"
-//			] )
-//			->where( [
-//				"AccountBlocks.account_action_id" => $this->authUser->id,
-//				"AccountBlocks.status"            => AccountBlock::STATUS_BLOCKED
-//			] )->orWhere( [
-//				"AccountBlocks.account_receive_id" => $this->authUser->id,
-//				"AccountBlocks.status"             => AccountBlock::STATUS_BLOCKED
-//			] );
-//		$blocks     = [];
-//		foreach ( $tmp_blocks as $tmp_block ) {
-//			$blocks[] = $tmp_block->account_action_id == $this->authUser->id ? $tmp_block->account_receive_id : $tmp_block->account_action_id;
-//		}
-//		$this->loadModel( "AccountReports" );
-//		$tmp_reports = $this->AccountReports
-//			->find()
-//			->select( [
-//				"AccountReports.account_receive_id",
-//				"AccountReports.account_action_id"
-//			] )
-//			->where( [
-//				"AccountReports.account_action_id" => $this->authUser->id,
-//				"AccountReports.status"            => AccountReport::STATUS_REPORTED
-//			] )->orWhere( [
-//				"AccountReports.account_receive_id" => $this->authUser->id,
-//				"AccountReports.status"             => AccountReport::STATUS_REPORTED
-//			] );
-//		$reports     = [];
-//		foreach ( $tmp_reports as $tmp_report ) {
-//			$reports[] = $tmp_report->account_action_id == $this->authUser->id ? $tmp_report->account_receive_id : $tmp_report->account_action_id;
-//		}
+
         $blocks = $reports = [];
 		$arr_ids = array_values( array_unique( array_merge( $friends, $blocks, $reports ), SORT_NUMERIC ) );
 
