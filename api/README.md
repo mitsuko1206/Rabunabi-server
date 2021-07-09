@@ -49,28 +49,3 @@ configuration relevant for your application.
 The app skeleton uses a subset of [Foundation](http://foundation.zurb.com/) (v5) CSS
 framework by default. You can, however, replace it with any other library or
 custom styles.
-
-## Install mongodb
-
-sudo vi /etc/yum.repos.d/mongodb-org.repo
-
-[mongodb-org-3.4]
-name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/
-gpgcheck=1
-enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
-
-sudo yum install mongodb-org
-sudo systemctl start mongod
-sudo systemctl reload mongod
-
-## MySQL Configuration
-mysql -u root -p
-
-CREATE USER 'rabunabi'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON * . * TO 'rabunabi'@'localhost';
-FLUSH PRIVILEGES;
-
-## Migration
-bin/cake migrations migrate

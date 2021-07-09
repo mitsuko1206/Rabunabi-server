@@ -68,7 +68,7 @@ use Cake\Utility\Security;
 try {
     Configure::config('default', new PhpConfig());
 //    Configure::load('app', 'default', false);
-    Configure::load('environments/' . env('CAKE_ENV', 'prod'), 'default', false);
+    Configure::load('environments/' . env('CAKE_ENV', 'local'), 'default', false);
     Configure::load('config', 'default', false);
     Configure::load('countries', 'default', false);
 } catch (\Exception $e) {
