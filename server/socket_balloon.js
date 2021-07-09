@@ -91,15 +91,14 @@ module.exports = function (io) {
             //Get socket already in current room
             var sockets = getSocketsInRoom(io, room_id, socket_chat_ns);
             console.log('join:roommm ' + room_id + ' -- ' + user_info.id);
-            console.log('here')
-            Accounts.findOne({where: {id: user_info.id}}).then((account)=> {
+            // Accounts.findOne({where: {id: user_info.id}}).then((account)=> {
 
-                account.point -= data.point;
-                console.log(account.point)
-                account.save()
-                console.log(account)
+            //     account.point -= data.point;
+            //     console.log(account.point)
+            //     account.save()
+            //     console.log(account)
 
-            });
+            // });
             socket.join(room_id);
             socket.emit('response:room', {
                 status: true,
