@@ -382,7 +382,7 @@ class AccountsController extends ApiAppController
             $point = $this->Points->find()->select()->where(['Points.male' => $dataPost['gender'] == 0])->first();
             
             $points = [
-                "points" => $point['initialPoints'],
+                "points" => $this->authUser->point,
                 "sendMessage" => $point['sendMessage'],
                 "readMessage" => $point['readMessage'],
                 "sendImage" => $point['sendImage']
@@ -412,7 +412,7 @@ class AccountsController extends ApiAppController
             ];
             $jwt_token = JWT::encode($payload, $this->_apiConfig["jwt_key"]);
             $dataReturn["Authorization"] = $jwt_token;
-            return $this->responseData(["status" => true, "data" => $dataReturn]);
+            return $this->responseData(["status" => true, "data" => $dataReturn, "point" => $points]);
         } else {
             return $this->responseData(["error_code" => 600]);
         }
