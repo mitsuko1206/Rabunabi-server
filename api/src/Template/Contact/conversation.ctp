@@ -109,7 +109,7 @@ $this->assign("title", __("問い合わせ"));
         </div>
     </div>
 </div>
-
+<?= $this->Html->script(\Cake\Core\Configure::read("App.socketBaseUrl") . "/socket.io/socket.io.js") ?>
 <script>
     var BASE_URL_HISTORY = "<?= $this->Url->build(["action" => "getContactHistory"]) ?>";
     var NEXT_PAGE = "";
