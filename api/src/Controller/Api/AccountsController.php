@@ -429,7 +429,7 @@ class AccountsController extends ApiAppController
         if (isset($dataPost["point"])) {
             if (!is_numeric($dataPost)) {
                 
-                return $this->responseData(["error_code" => 101]);
+                return $this->responseData(["error_code" => 102]);
             }
             $this->authUser->point = $dataPost["point"];
         }
