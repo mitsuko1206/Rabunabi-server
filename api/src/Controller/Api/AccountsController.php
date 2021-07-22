@@ -431,7 +431,7 @@ class AccountsController extends ApiAppController
                 
                 return $this->responseData(["error_code" => 102]);
             }
-            $this->authUser->point = $this->authUser->point + $dataPost["point"];
+            $this->authUser->point =  $dataPost["point"];
         }
         if ($this->Accounts->save($this->authUser)) {
             return $this->responseData(["status" => true]);
