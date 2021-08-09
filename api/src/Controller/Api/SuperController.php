@@ -35,15 +35,7 @@ class SuperController extends ApiAppController {
 			                           'user_agent' => $this->clientDevice['user-agent'],
 		                           ] )->first();
 		$jwt_token = '';
-		$this->loadModel("Points");
-		$point = $this->Points->find()->select()->where(['Points.male' => $dataPost['gender'] == 1])->first();
-        
-		$points = [
-			"points" => $point['initialPoints'],
-			"sendMessage" => $point['sendMessage'],
-			"readMessage" => $point['readMessage'],
-			"sendImage" => $point['sendImage']
-		];
+		
 		$profile=[];
 		if ( $device ) {
 			$account = $this->Devices->Accounts->find()->select( [
@@ -85,7 +77,16 @@ class SuperController extends ApiAppController {
 			$device = $this->Devices->newEntity();
 		}
 
-		
+		$this->loadModel("Points");
+		$point = $this->Points->find()->select()->where(['Points.male' => $account->gender == 1])->first();
+        
+		$points = [
+			"points" => $point['initialPoints'],
+			"sendMessage" => $point['sendMessage'],
+			"readMessage" => $point['readMessage'],
+			"sendImage" => $point['sendImage']
+		];
+
 		$device->uuid        = $this->clientDevice['uuid'];
 		$device->user_agent  = $this->clientDevice['user-agent'];
 		$device->version     = $this->clientDevice['version'];
