@@ -155,6 +155,7 @@ class PushNotificationController extends AppController
                 if (isset($resultIos['failure'])) $iOSFailure += $resultIos['failure'];
                 if (isset($resultAndroid['success'])) $androidSuccess += $resultAndroid['success'];
                 if (isset($resultAndroid['failure'])) $androidFailure += $resultAndroid['failure'];
+                $dataReturn['resultAndroid'] = $resultAndroid;
             }
 	        
             
@@ -170,6 +171,7 @@ class PushNotificationController extends AppController
             $dataReturn["androidFailure"] = $androidFailure;
             $dataReturn["arrTokenAndroid"] = count($arrTokenAndroid);
             $dataReturn["arrTokenIos"] = count($arrTokenIos);
+            $dataReturn["result"] = count($arrTokenIos);
             
         }
         $this->response = $this->response->withType("application/json")->withStringBody(json_encode($dataReturn));

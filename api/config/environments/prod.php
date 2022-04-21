@@ -14,7 +14,7 @@ return [
         // 'baseUrl' => env('SCRIPT_NAME'),
         'subDomain' => 'rabunabi',
         'fullBaseUrl' => false,
-        'socketBaseUrl' => 'http://18.183.150.95:3001/chat-rabunabi',
+        'socketBaseUrl' => 'http://54.168.213.169:3001/chat-rabunabi',
         'imageBaseUrl' => 'img/',
         'cssBaseUrl' => 'css/',
         'jsBaseUrl' => 'js/',
